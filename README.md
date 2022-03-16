@@ -80,6 +80,6 @@ jobs:
         uses: mszaro/app-center-start-build@1.0
         with:
           appcenter-token: '${{ secrets.APP_CENTER_TOKEN }}'
-          branch: '${{ env.GITHUB_HEAD_REF }}'
+          branch: '${{ env.GITHUB_REF_NAME }}'
           project-id: 'MyAppCenterOrg/MyAppCenterApp'
 ```

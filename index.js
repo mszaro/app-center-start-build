@@ -4,11 +4,10 @@ const axios = require('axios');
 async function main() {
     try {
         const appCenterToken = core.getInput('appcenter-token');
-        const sourceBranch = core.getInput('source-branch');
+        const branch = core.getInput('branch');
         const projectId = core.getInput('project-id');
-        const targetBranch = core.getInput('target-branch');
 
-        const url = `https://api.appcenter.ms/v0.1/apps/${projectId}/branches/${targetBranch}/config`;
+        const url = `https://api.appcenter.ms/v0.1/apps/${projectId}/branches/${branch}/builds`;
 
         const config = {
             url,
@@ -18,7 +17,6 @@ async function main() {
                 "x-api-token": appCenterToken
             },
             data: {
-                cloneFromBranch: sourceBranch
             }
         };
 

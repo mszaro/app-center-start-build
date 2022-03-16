@@ -1,5 +1,5 @@
-name: 'Create Build configuration for App Center'
-description: 'This action creates a build configuration from the existing branch config for App Center CI'
+name: 'Kickoff Build in App Center CI'
+description: 'This action starts building a given branch in App Center'
 inputs:
   appcenter-token:
     description: 'Value of your App Center token'
@@ -7,11 +7,8 @@ inputs:
   project-id:
     description: 'Name of your project ({{org/project_name}})'
     required: true
-  source-branch:
-    description: 'Name of your source branch name (cloneFromBranch)'
-    required: true
-  target-branch:
-    description: 'Name of your target branch ({{current_branch}})'
+  branch:
+    description: 'Name of your branch to be built'
     required: true
 runs:
   using: 'node12'
